@@ -35,11 +35,12 @@ public class BookDAOImpl implements dataAccessObject<Book> {
       this.pst.setString(2, book.getDescription());
       this.pst.setString(3, book.getGenre());
       this.pst.setString(4, book.getAuthor());
-      this.pst.setInt(5, book.getPrice());
+      this.pst.setDouble(5, book.getPrice());
 
       i = this.pst.executeUpdate();
 
     } catch (SQLException e) {
+      e.printStackTrace();
       System.out.println(e);
     }
 
@@ -62,12 +63,13 @@ public class BookDAOImpl implements dataAccessObject<Book> {
         Book b = new Book(this.rs.getInt(1),
             this.rs.getString(2),
             this.rs.getString(3),
-            this.rs.getString(4), this.rs.getString(5), this.rs.getInt(5));
+            this.rs.getString(4), this.rs.getString(5), this.rs.getDouble(6));
 
         bookList.add(b);
       }
 
     } catch (SQLException e) {
+      e.printStackTrace();
       System.out.println(e);
     }
 

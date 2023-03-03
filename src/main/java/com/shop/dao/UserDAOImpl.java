@@ -41,6 +41,7 @@ public class UserDAOImpl implements dataAccessObject<User> {
       }
 
     } catch (SQLException ex) {
+      ex.printStackTrace();
       System.out.println(ex);
     }
 
@@ -68,6 +69,7 @@ public class UserDAOImpl implements dataAccessObject<User> {
       i = this.pst.executeUpdate();
 
     } catch (SQLException e) {
+      e.printStackTrace();
       System.out.println(e);
     }
 
@@ -98,6 +100,7 @@ public class UserDAOImpl implements dataAccessObject<User> {
       }
 
     } catch (SQLException e) {
+      e.printStackTrace();
       System.out.println(e);
     }
 

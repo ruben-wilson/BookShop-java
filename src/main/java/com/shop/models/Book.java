@@ -6,16 +6,16 @@ public class Book {
   private String description;
   private String genre;
   private String author;
-  private int price;
+  private double price;
   
 
-  public int getPrice() {
+  public double getPrice() {
     return price;
   }
   public void setPrice(int price) {
     this.price = price;
   }
-  public Book(int book_ID, String title, String description, String genre, String author, int price) {
+  public Book(int book_ID, String title, String description, String genre, String author, Double price) {
     this.book_ID = book_ID;
     this.title = title;
     this.description = description;
