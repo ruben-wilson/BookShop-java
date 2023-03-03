@@ -10,7 +10,7 @@ import java.util.List;
 import com.shop.models.User;
 import com.shop.utils.DatabaseConnection;
 
-public class UserDAOImpl implements UserDAO {
+public class UserDAOImpl implements dataAccessObject<User> {
 
   private List<User> userList = new ArrayList<>();
 
@@ -20,7 +20,35 @@ public class UserDAOImpl implements UserDAO {
 
   private ResultSet rs;
 
-  public int addUser(User User) {
+
+  public User userLogin(String userEmail, String userPassword){
+
+    this.con = DatabaseConnection.getMyDBConnection();
+
+    User e = null;
+
+    try {
+
+      this.pst = this.con.prepareStatement("SELECT * from user WHERE Email = ? AND Password = ?");
+
+      this.pst.setString(1, userEmail);
+      this.pst.setString(2, userPassword);
+
+      this.rs = this.pst.executeQuery();
+
+      if (this.rs.next()) { // Login Success
+        e = new User(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5));
+      }
+
+    } catch (SQLException ex) {
+      System.out.println(ex);
+    }
+
+    return e;
+  }
+
+  @Override
+  public int addObject(User User) {
 
     int i = 0;
 
@@ -47,7 +75,8 @@ public class UserDAOImpl implements UserDAO {
 
   }
 
-  public List<User> findAllUsers() {
+  @Override
+  public List<User> returnAll() {
 
     this.con = DatabaseConnection.getMyDBConnection();
 
@@ -76,46 +105,17 @@ public class UserDAOImpl implements UserDAO {
   }
 
   @Override
-  public User userLogin(String userEmail, String userPassword) {
-
-    this.con = DatabaseConnection.getMyDBConnection();
-
-    User e = null;
-
-    try {
-
-      this.pst = this.con.prepareStatement("SELECT * from user WHERE Email = ? AND Password = ?");
-
-      this.pst.setString(1, userEmail);
-      this.pst.setString(2, userPassword);
-
-      this.rs = this.pst.executeQuery();
-
-      if (this.rs.next()) { // Login Success
-        e = new User(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5));
-      }
-
-    } catch (SQLException ex) {
-      System.out.println(ex);
-    }
-
-    return e;
-  }
-
-  @Override
-  public int deleteUserById(int userId) {
+  public int deleteById(int userId) {
     return 0;
   }
 
   @Override
-  public List<User> findAllUsersByFirstName(String firstName) {
-
+  public List<User> findByParam(String param) {
     return null;
-
   }
 
   @Override
-  public int updateUserEmailById(int UserId, String newEmail) {
+  public int updateParamById(int UserId, String paramToUpdate, String newValue) {
 
     return 0;
 
