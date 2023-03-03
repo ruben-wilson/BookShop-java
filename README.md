@@ -3,7 +3,7 @@
 - Book StoreObjective
   The objective of this assessment is to build a Java webapplication using learning outcomes of Java modulesbased on a scenario. 
 
-## Overview-Scenario and Design
+## Overview-Scenario and Design
   You  have been  asked  to  design  and  implement a 3-Tier based Java webapplication for a bookstore. The application  will  be  made  available  for  two  user  groups:  Registered  User  and Unregistered  User.  Each  user  group  is  to  have  access  to  their  own  facilities  and  interlinked functionalities. Unregistered users can view Book Store/browse books but cannot access all the facilities and features compared to those a Registered User has. 
 
   **Facilities provided to the Unregistered User**
