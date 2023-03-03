@@ -20,7 +20,7 @@ public class DatabaseConnection {
       Class.forName("com.mysql.cj.jdbc.Driver");
 
       if (con == null)
-        con = DriverManager.getConnection("jdbc:mysql://localhost/shopping_db", "root", "");
+        con = DriverManager.getConnection("jdbc:mysql://localhost/bookshop", "root", "");
 
     }
     catch (ClassNotFoundException e) {

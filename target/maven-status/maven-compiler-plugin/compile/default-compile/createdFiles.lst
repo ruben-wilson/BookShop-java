@@ -1,5 +1,6 @@
-com/shop/dao/EmployeeDAO.class
+com/shop/dao/UserDAOImpl.class
+com/shop/dao/UserDAO.class
 com/shop/utils/DatabaseConnection.class
-com/shop/models/Employee.class
-com/shop/servlet/HelloServlet.class
-com/shop/dao/EmployeeDAOImpl.class
+com/shop/models/User.class
+com/shop/servlet/HomePageServlet.class
+com/shop/servlet/RegisterServlet.class

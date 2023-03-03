@@ -25,5 +25,65 @@
  An  Unregistered  User  can  view list  of books and just look and read  the basic book details provided. After that if the user is interested tthe user can register with Book Storeapplication.The registration process prompts the user to input all necessary details to register like firstname, lastname, email id and password etc. After registration, the user will have a unique email id and a password for logging in to theBook Store. Registered and Unregistered Users have a search option to search books by giving the name of the author(s) or the ISBN of the book. Registered Users can add books to shopping basket and purchase them.
 
 
- ## Databases 
+ ## Database structure 
+![dbGraph](./graphs/dbgraph.png)
+**create statements**
+```sql
+CREATE table Book(
+  Book_ID INT NOT NULL AUTO_INCREMENT,
+  Title VARCHAR(255),
+  Description VARCHAR(255),
+  Genre VARCHAR(20),
+  Author VARCHAR(50),
+  Price INT,
+  PRIMARY KEY(Book_ID)
+);
+
+CREATE table User(
+  User_ID INT NOT NULL AUTO_INCREMENT,
+  Name VARCHAR(255),
+  Username VARCHAR(255),
+  Password VARCHAR(20),
+  Email VARCHAR(50),
+  PRIMARY KEY(User_ID)
+);
+
+CREATE table Sale(
+  Sale_ID INT NOT NULL AUTO_INCREMENT,
+  User_ID INT,
+  Book_ID INT,
+  Date VARCHAR(12),
+  Amount FLOAT(10,2),
+  PRIMARY KEY(Sale_ID),
+  FOREIGN KEY (User_ID) REFERENCES User(User_ID),
+  FOREIGN KEY (Book_ID) REFERENCES Book(Book_ID)
+);
+```
+**seed data**
+
+```sql
+INSERT INTO book(Title, Description, Genre, Author, Price)VALUES 
+("harry potter", "its about a wizard", "fantasy", "jk rowling", 12.50),("Da Vinci Code", "Da Vinci Code is a book ...", "Thriller & Adventure", "Dan Brown", 9.50),("Very Hungry Caterpillar,The:The Very Hungry Caterpillar", "Very Hungry Caterpillar goes on an adventure", "picture book", "Eric Carle", 5.00),("Kite Runner", "a sad story", "literal fiction", "Khaled Hosseini", 5.00);
+
+INSERT INTO user(Name, Username, Password, Email)VALUES 
+("harry", "hp", "fantasyeee33", "hp@gmail.com"), ("daniel", "dannie", "fantafdsyeee33", "d@gmail.com"),("mike", "mk", "books123", "m@gmail.com");
+```
+
+
+## website layout first draft 
+
+![webdesign](./graphs/basicwebdesign.png)
+
+## SPRINT ONE 
+
+as a user 
+i should be able to see all books 
+
+as a user 
+i should be able to sign up 
+
+as a user 
+i should be able to 
+login/out
+
 
