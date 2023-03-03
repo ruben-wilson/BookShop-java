@@ -10,12 +10,17 @@
   </head>
 
   <body>
-    <% 
-      String name = (String) session.getAttribute("name");
-      
-    %>
-    fff
-    <p>Welcome, <%= name %></p>
+    Login page
+
+    <form action="Register" method="POST">
+        Name: <input type="text" name="name" /> <br>
+        Surname: <input type="text" name="surname" /> <br>
+        email: <input type="text" name="email" /> <br>
+        password: <input type="text" name="password" /> <br>
+      <input type="submit" value="submit" />
+    </form>
+
+
   </body>
 
   </html>

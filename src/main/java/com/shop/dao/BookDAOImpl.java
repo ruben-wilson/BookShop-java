@@ -10,7 +10,7 @@ import java.util.List;
 import com.shop.models.Book;
 import com.shop.utils.DatabaseConnection;
 
-public class BookDAOImpl implements dataAccessObject<Book> {
+public class BookDAOImpl implements DataAccessObject<Book> {
 
   private List<Book> bookList = new ArrayList<>();
 

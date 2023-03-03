@@ -12,7 +12,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Home</title>
 </head>
-<body>
+<a> 
 
   <% 
     List<Book> allObjects = (List<Book>) request.getAttribute("allBooks");
@@ -22,12 +22,12 @@
     for(Book b : allObjects){
     %>
   
-    <p>title: <%=b.getTitle()%> genre:<%=b.getGenre()%> price:<%=b.getPrice()%></p>
+    <p>title: <%=b.getTitle()%>price:£<%=b.getPrice()%></p>
   
     <% } %>
 
 
-  <form action="RegisterServlet" method="POST">
+  <form action="Register" method="POST">
       <label for="name">Name:</label>
       Employee FirstName = <input type="text" name="fname" /> <br>
       <input type="submit" value="REGISTER" />

@@ -2,7 +2,7 @@ package com.shop.dao;
 
 import java.util.List;
 
-public interface dataAccessObject<T> {
+public interface DataAccessObject<T> {
   public int addObject(T obj);
 
   public List<T> returnAll();

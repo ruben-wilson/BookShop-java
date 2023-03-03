@@ -10,7 +10,7 @@ import java.util.List;
 import com.shop.models.User;
 import com.shop.utils.DatabaseConnection;
 
-public class UserDAOImpl implements dataAccessObject<User> {
+public class UserDAOImpl implements DataAccessObject<User> {
 
   private List<User> userList = new ArrayList<>();
 
@@ -49,7 +49,7 @@ public class UserDAOImpl implements dataAccessObject<User> {
   }
 
   @Override
-  public int addObject(User User) {
+  public int addObject(User user) {
 
     int i = 0;
 
@@ -57,14 +57,13 @@ public class UserDAOImpl implements dataAccessObject<User> {
 
     try {
 
-      this.pst = this.con.prepareStatement("INSERT into User(User_id, User_first_name, "
-          + "User_last_name,User_email, User_password) VALUES(?,?,?,?,?)");
+      this.pst = this.con.prepareStatement("INSERT into User(Name,"
+      + "Username, Email, Password) VALUES(?,?,?,?)");
 
-      this.pst.setInt(1, User.getUserID());
-      this.pst.setString(2, User.getName());
-      this.pst.setString(3, User.getSurname());
-      this.pst.setString(4, User.getPassword());
-      this.pst.setString(5, User.getEmail());
+      this.pst.setString(1, user.getName());
+      this.pst.setString(2, user.getSurname());
+      this.pst.setString(3, user.getEmail());
+      this.pst.setString(4, user.getPassword());
 
       i = this.pst.executeUpdate();
 
