@@ -1,5 +1,6 @@
 com/shop/dao/DataAccessObject.class
 com/shop/models/Book.class
+com/shop/servlet/LoginServlet.class
 com/shop/dao/BookDAOImpl.class
 com/shop/dao/UserDAOImpl.class
 com/shop/utils/DatabaseConnection.class

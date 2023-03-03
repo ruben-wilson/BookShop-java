@@ -23,7 +23,7 @@ public class HomePageServlet extends HttpServlet {
     HttpSession session = req.getSession();
 
     if (session.getAttribute("name") == null) {
-      resp.sendRedirect("Register");
+      resp.sendRedirect("Login");
     }else{
       DataAccessObject<Book> bookDAO = new BookDAOImpl();
       List<Book> allBooks = bookDAO.returnAll();
