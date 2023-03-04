@@ -1,3 +1,4 @@
+com/shop/servlet/SearchBooksServlet.class
 com/shop/dao/DataAccessObject.class
 com/shop/models/Book.class
 com/shop/servlet/LoginServlet.class

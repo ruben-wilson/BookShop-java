@@ -65,7 +65,7 @@ public class BookDAOImpl implements DataAccessObject<Book> {
             this.rs.getString(3),
             this.rs.getString(4), this.rs.getString(5), this.rs.getDouble(6));
 
-        bookList.add(b);
+        this.bookList.add(b);
       }
 
     } catch (SQLException e) {
@@ -82,8 +82,34 @@ public class BookDAOImpl implements DataAccessObject<Book> {
   }
 
   @Override
-  public List<Book> findByParam(String param) {
-    return null;
+  public List<Book> findByParam(String bookTitle) {
+
+    this.con = DatabaseConnection.getMyDBConnection();
+
+    try {
+
+      this.pst = this.con.prepareStatement("SELECT * FROM Book WHERE Title = ?");
+      this.pst.setString(1, bookTitle);
+
+      this.rs = this.pst.executeQuery();
+    
+
+      while (this.rs.next()) {
+
+        Book b = new Book(this.rs.getInt(1),
+            this.rs.getString(2),
+            this.rs.getString(3),
+            this.rs.getString(4), this.rs.getString(5), this.rs.getDouble(6));
+
+        this.bookList.add(b);
+      }
+
+    } catch (SQLException e) {
+      e.printStackTrace();
+      System.out.println(e);
+    }
+
+    return this.bookList;
   }
 
   @Override

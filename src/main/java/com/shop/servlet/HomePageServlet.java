@@ -21,16 +21,23 @@ public class HomePageServlet extends HttpServlet {
   protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
     HttpSession session = req.getSession();
+    RequestDispatcher view = req.getRequestDispatcher("./views/index.jsp");
+
+    DataAccessObject<Book> bookDAO = new BookDAOImpl();
+    List<Book> allBooks = bookDAO.returnAll();
+    req.setAttribute("allBooks", allBooks);
 
     if (session.getAttribute("name") == null) {
-      resp.sendRedirect("Login");
+      session.setAttribute("href", "Login");
+      session.setAttribute("logged", "Login");
+
+      view.forward(req, resp);
     }else{
-      DataAccessObject<Book> bookDAO = new BookDAOImpl();
-      List<Book> allBooks = bookDAO.returnAll();
 
-      req.setAttribute("allBooks", allBooks);
-
-      RequestDispatcher view = req.getRequestDispatcher("./views/index.jsp");
+      session.setAttribute("href", "");
+      session.setAttribute("logged", "Account Detail");
+      session.setAttribute("name", session.getAttribute("name"));
+    
       view.forward(req, resp);
     }
 

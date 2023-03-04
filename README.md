@@ -86,4 +86,13 @@ as a user
 i should be able to 
 login/out
 
+## SPRINT TWO
 
+as a user 
+i should be able to search 
+for a book by title 
+
+as a user 
+i should be able to see a 
+specific books details 
+"information (Overview, Authors, etc)"

@@ -1,7 +1,6 @@
 package com.shop.servlet;
 
 import java.io.IOException;
-import java.io.PipedWriter;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -11,7 +10,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.shop.dao.DataAccessObject;
 import com.shop.dao.UserDAOImpl;
 import com.shop.models.User;
 
