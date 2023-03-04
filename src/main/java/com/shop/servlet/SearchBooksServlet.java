@@ -10,7 +10,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
+
 
 import com.shop.dao.BookDAOImpl;
 import com.shop.dao.DataAccessObject;
@@ -31,6 +31,5 @@ public class SearchBooksServlet extends HttpServlet {
 
     req.setAttribute("book", resultSet.get(0));
     view.forward(req, resp);
-
   }
 }

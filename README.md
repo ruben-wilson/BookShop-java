@@ -96,3 +96,18 @@ as a user
 i should be able to see a 
 specific books details 
 "information (Overview, Authors, etc)"
+
+## SPRINT THREE 
+
+as a user 
+i should be able to add a book to shopping basket
+
+as a user 
+i should be able to view my shopping basket 
+
+as a user 
+i should be able to modify my shopping basket 
+
+as a user 
+i should be able to procced to a checkout option
+

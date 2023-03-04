@@ -29,14 +29,19 @@ public class HomePageServlet extends HttpServlet {
 
     if (session.getAttribute("name") == null) {
       session.setAttribute("href", "Login");
-      session.setAttribute("logged", "Login");
+      session.setAttribute("isLogged", "Login");
+      session.setAttribute("logOutHref", null);
+      session.setAttribute("logOut", null);
 
       view.forward(req, resp);
     }else{
 
       session.setAttribute("href", "");
-      session.setAttribute("logged", "Account Detail");
-      session.setAttribute("name", session.getAttribute("name"));
+      session.setAttribute("isLogged", "Account Detail");
+      session.setAttribute("logOutHref", "Logout");
+      session.setAttribute("logOut", "Logout");
+
+      session.setAttribute("isLogged", "Account Detail");
     
       view.forward(req, resp);
     }

@@ -1,10 +1,14 @@
 com/shop/servlet/SearchBooksServlet.class
 com/shop/dao/DataAccessObject.class
+com/shop/models/Basket.class
 com/shop/models/Book.class
 com/shop/servlet/LoginServlet.class
 com/shop/dao/BookDAOImpl.class
-com/shop/dao/UserDAOImpl.class
+com/shop/servlet/BasketServlet.class
+com/shop/dao/BasketDAOImpI.class
 com/shop/utils/DatabaseConnection.class
+com/shop/servlet/RegisterServlet.class
+com/shop/servlet/LogOutServlet.class
+com/shop/dao/UserDAOImpl.class
 com/shop/models/User.class
 com/shop/servlet/HomePageServlet.class
-com/shop/servlet/RegisterServlet.class
