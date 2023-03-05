@@ -67,6 +67,16 @@ INSERT INTO book(Title, Description, Genre, Author, Price)VALUES
 
 INSERT INTO user(Name, Username, Password, Email)VALUES 
 ("harry", "hp", "fantasyeee33", "hp@gmail.com"), ("daniel", "dannie", "fantafdsyeee33", "d@gmail.com"),("mike", "mk", "books123", "m@gmail.com");
+
+INSERT INTO sale(User_ID, Book_ID, Date, Amount)VALUES
+(6, 1, "12/5/23", 13.00), (6, 2, "12/5/23", 10.00), (6, 3, "12/5/23", 5.00);
+
+-- join query for sales
+SELECT u.Name, b.Title, b.Price, b.genre,
+        b.Author, s.Date, s.Amount FROM 
+        sale s 
+        INNER JOIN book b ON s.Book_ID = b.Book_ID
+        INNER JOIN user u ON s.User_ID = u.User_ID;
 ```
 
 

@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-  <%@ page import="com.shop.models.Book" %>
+<%@ page import="com.shop.models.Book" %>
+<%@ page import="com.shop.models.Sale" %>
+<%@ page import="java.util.ArrayList" %>
+ <%@ page import="java.util.List" %>
     <!DOCTYPE html>
     <html lang="en">
 
@@ -26,11 +29,39 @@
               <p>Email: ${sessionScope.email}</p>
             </li>
             <li>
-              <button onclick="createForm()" >Edit account details</button>
+              <form action="OrderHistory" method="get">
+                <button type="submit">see Order History</button>
+              </form>
+            </li>
+            <li>
+              <button onclick="createForm()">Edit account details</button>
             </li>
           </ul>
-
         </div>
+        <% if(session.getAttribute("allOrders") != null){%>
+          <div>
+            All Orders
+            <ul>
+              <% List<Sale> allOrders = (List<Sale>) session.getAttribute("allOrders");
+                  for(Sale s : allOrders){
+                  %>
+                  <li>
+                    <p>item: <%=s.getBookTitle()%> purchase date: <%=s.getDate()%>
+                    </p>
+                  </li>
+                  <li>
+                    <p>Author: <%=s.getAuthor()%>
+                    </p>
+                  </li>
+                  <li>
+                    <p>price:£<%=s.getPrice()%>
+                    </p>
+                  </li>
+            
+                  <% } %>
+            </ul>
+          </div>
+        <% }%>
       </div>
 
 
@@ -38,8 +69,8 @@
 
     </body>
     <script>
+
        const createForm = () => {
-         
           let form = document.createElement("form");
           form.setAttribute("method", "post");
           form.setAttribute("action", "Account");
@@ -70,6 +101,8 @@
 
           document.body.appendChild(form);
         }
+
+
     </script>
 
     </html>

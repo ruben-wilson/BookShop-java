@@ -6,11 +6,14 @@ com/shop/models/Book.class
 com/shop/servlet/LoginServlet.class
 com/shop/dao/BookDAOImpl.class
 com/shop/servlet/BasketServlet.class
-com/shop/dao/BasketDAOImpI.class
 com/shop/utils/DatabaseConnection.class
+com/shop/models/Sale.class
 com/shop/servlet/RegisterServlet.class
 com/shop/servlet/AccountServlet.class
+com/shop/servlet/OrderHistoryServlet.class
 com/shop/servlet/LogOutServlet.class
+com/shop/servlet/SaleServlet.class
+com/shop/dao/SaleDAOImpI.class
 com/shop/dao/UserDAOImpl.class
 com/shop/models/User.class
 com/shop/servlet/HomePageServlet.class

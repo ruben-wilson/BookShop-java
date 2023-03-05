@@ -29,6 +29,8 @@ public class AccountServlet extends HttpServlet {
     HttpSession session = req.getSession(false);
 
     UserDAOImpl userDAO = new UserDAOImpl();
+
+    System.out.println(session.getAttribute("name") + " acount servelt :33");
     User user = userDAO.findByParam(((String) session.getAttribute("name"))).get(0);
     
     

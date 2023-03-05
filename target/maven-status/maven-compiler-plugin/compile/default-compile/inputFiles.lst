@@ -1,8 +1,9 @@
+/Users/rubenwilson/Desktop/2023_AB/assesesment-2/bshop/src/main/java/com/shop/servlet/OrderHistoryServlet.java
 /Users/rubenwilson/Desktop/2023_AB/assesesment-2/bshop/src/main/java/com/shop/servlet/HomePageServlet.java
 /Users/rubenwilson/Desktop/2023_AB/assesesment-2/bshop/src/main/java/com/shop/models/Book.java
 /Users/rubenwilson/Desktop/2023_AB/assesesment-2/bshop/src/main/java/com/shop/servlet/AccountServlet.java
 /Users/rubenwilson/Desktop/2023_AB/assesesment-2/bshop/src/main/java/com/shop/servlet/LoginServlet.java
-/Users/rubenwilson/Desktop/2023_AB/assesesment-2/bshop/src/main/java/com/shop/dao/BasketDAOImpI.java
+/Users/rubenwilson/Desktop/2023_AB/assesesment-2/bshop/src/main/java/com/shop/models/Sale.java
 /Users/rubenwilson/Desktop/2023_AB/assesesment-2/bshop/src/main/java/com/shop/dao/DataAccessObject.java
 /Users/rubenwilson/Desktop/2023_AB/assesesment-2/bshop/src/main/java/com/shop/servlet/SearchBooksServlet.java
 /Users/rubenwilson/Desktop/2023_AB/assesesment-2/bshop/src/main/java/com/shop/servlet/LogOutServlet.java
@@ -11,6 +12,8 @@
 /Users/rubenwilson/Desktop/2023_AB/assesesment-2/bshop/src/main/java/com/shop/servlet/BasketDeleteServlet.java
 /Users/rubenwilson/Desktop/2023_AB/assesesment-2/bshop/src/main/java/com/shop/servlet/BasketServlet.java
 /Users/rubenwilson/Desktop/2023_AB/assesesment-2/bshop/src/main/java/com/shop/models/User.java
+/Users/rubenwilson/Desktop/2023_AB/assesesment-2/bshop/src/main/java/com/shop/dao/SaleDAOImpI.java
 /Users/rubenwilson/Desktop/2023_AB/assesesment-2/bshop/src/main/java/com/shop/dao/UserDAOImpl.java
 /Users/rubenwilson/Desktop/2023_AB/assesesment-2/bshop/src/main/java/com/shop/servlet/RegisterServlet.java
+/Users/rubenwilson/Desktop/2023_AB/assesesment-2/bshop/src/main/java/com/shop/servlet/SaleServlet.java
 /Users/rubenwilson/Desktop/2023_AB/assesesment-2/bshop/src/main/java/com/shop/models/Basket.java

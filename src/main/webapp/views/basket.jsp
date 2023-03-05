@@ -48,6 +48,11 @@
         </ul>
         <%}%>
       </div>
+      <div>
+        <form method="post" action="Sale">
+          <button type="submit" >Buy</button>
+        </form>
+      </div>
     </body>
 
     </html>
