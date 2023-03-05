@@ -111,3 +111,19 @@ i should be able to modify my shopping basket
 as a user 
 i should be able to procced to a checkout option
 
+## SPRINT FOUR 
+
+(Back Log)
+"as a user 
+i should be able to procced to a checkout option"
+
+as a user 
+i would like to be able to see an account page 
+
+as a user 
+i would like to be able to
+edit my acount details
+
+as a user 
+i would like to see my order
+history 

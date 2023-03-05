@@ -36,12 +36,11 @@ public class HomePageServlet extends HttpServlet {
       view.forward(req, resp);
     }else{
 
-      session.setAttribute("href", "");
-      session.setAttribute("isLogged", "Account Detail");
+      session.setAttribute("href", "Account");
+      session.setAttribute("isLogged", "Account Details");
       session.setAttribute("logOutHref", "Logout");
       session.setAttribute("logOut", "Logout");
 
-      session.setAttribute("isLogged", "Account Detail");
     
       view.forward(req, resp);
     }

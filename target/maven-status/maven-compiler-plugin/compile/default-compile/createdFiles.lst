@@ -1,3 +1,4 @@
+com/shop/servlet/BasketDeleteServlet.class
 com/shop/servlet/SearchBooksServlet.class
 com/shop/dao/DataAccessObject.class
 com/shop/models/Basket.class
@@ -8,6 +9,7 @@ com/shop/servlet/BasketServlet.class
 com/shop/dao/BasketDAOImpI.class
 com/shop/utils/DatabaseConnection.class
 com/shop/servlet/RegisterServlet.class
+com/shop/servlet/AccountServlet.class
 com/shop/servlet/LogOutServlet.class
 com/shop/dao/UserDAOImpl.class
 com/shop/models/User.class

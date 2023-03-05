@@ -20,9 +20,13 @@ public class Basket {
     this.books.add(book);
   }
 
-  public void deleteBook(Book book) {
-    this.books.remove(book);
-  }
+  public void deleteBook(String bookTitle) {
+    Book bToDelete = this.books.stream()
+                              .filter(b -> b.getTitle().equals(bookTitle))
+                              .findFirst()
+                              .orElse(null);
+    this.books.remove(bToDelete);
+  } 
 
   public void setBooks(List<Book> books) {
     this.books = books;

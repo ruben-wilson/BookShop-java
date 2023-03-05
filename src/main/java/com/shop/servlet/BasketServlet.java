@@ -59,9 +59,18 @@ public class BasketServlet extends HttpServlet{
 
       resp.sendRedirect("Home");
     }
+  }
 
-    
+  public void doDelete(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    HttpSession session = req.getSession();
 
+    Basket basket = (Basket) session.getAttribute("basket");
+    basket.deleteBook(req.getParameter("bookTitle"));
+
+    System.out.println("her at deleteBook");
+    session.setAttribute("basket", basket);
+
+    resp.sendRedirect("Basket");
   }
   
 }

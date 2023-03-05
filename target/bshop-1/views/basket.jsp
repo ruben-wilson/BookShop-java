@@ -36,7 +36,12 @@
               <li>
                 <p>price:£<%=b.getPrice()%>
                 </p>
+                <form method="post" action="BasketDelete">
+                  <input type="hidden" name="bookTitle" value="<%=b.getTitle()%>">
+                  <button type="submit">Delete from basket</button>
+                </form>
               </li>
+
         
               <% } %>
         
