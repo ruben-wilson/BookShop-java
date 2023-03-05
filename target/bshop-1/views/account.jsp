@@ -45,19 +45,19 @@
           form.setAttribute("action", "Account");
 
           let input1 = document.createElement("input");
-          input.setAttribute("type", "text");
-          input.setAttribute("name", "name");
-          input.setAttribute("placeholder", "Enter your new name");
+          input1.setAttribute("type", "text");
+          input1.setAttribute("name", "name");
+          input1.setAttribute("placeholder", "Enter your new name");
 
           let input2 = document.createElement("input");
-          input.setAttribute("type", "text");
-          input.setAttribute("name", "surname");
-          input.setAttribute("placeholder", "Enter your new username");
+          input2.setAttribute("type", "text");
+          input2.setAttribute("name", "surname");
+          input2.setAttribute("placeholder", "Enter your new username");
 
           let input3 = document.createElement("input");
-          input.setAttribute("type", "text");
-          input.setAttribute("name", "email");
-          input.setAttribute("placeholder", "Enter your new email");
+          input3.setAttribute("type", "text");
+          input3.setAttribute("name", "email");
+          input3.setAttribute("placeholder", "Enter your new email");
 
           let button = document.createElement("button");
           button.setAttribute("type", "submit");

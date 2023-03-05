@@ -22,7 +22,7 @@ public class UserDAOImpl implements DataAccessObject<User> {
 
 
   public User userLogin(String userEmail, String userPassword){
-
+    this.userList.clear();
     this.con = DatabaseConnection.getMyDBConnection();
 
     User e = null;
@@ -69,7 +69,6 @@ public class UserDAOImpl implements DataAccessObject<User> {
 
     } catch (SQLException e) {
       e.printStackTrace();
-      System.out.println(e);
     }
 
     return i;
@@ -78,6 +77,7 @@ public class UserDAOImpl implements DataAccessObject<User> {
 
   @Override
   public List<User> returnAll() {
+    this.userList.clear();
 
     this.con = DatabaseConnection.getMyDBConnection();
 
@@ -94,13 +94,12 @@ public class UserDAOImpl implements DataAccessObject<User> {
             this.rs.getString(3),
             this.rs.getString(4), this.rs.getString(5));
 
-        userList.add(e);
+        this.userList.add(e);
 
       }
 
     } catch (SQLException e) {
       e.printStackTrace();
-      System.out.println(e);
     }
 
     return this.userList;
@@ -112,14 +111,57 @@ public class UserDAOImpl implements DataAccessObject<User> {
   }
 
   @Override
-  public List<User> findByParam(String param) {
-    return null;
+  public List<User> findByParam(String userName) {
+    this.con = DatabaseConnection.getMyDBConnection();
+    this.userList.clear(); 
+
+    try {
+
+      this.pst = this.con.prepareStatement("SELECT * FROM user WHERE Name = ?");
+      this.pst.setString(1, userName);
+
+      this.rs = this.pst.executeQuery();
+
+      while (this.rs.next()) {
+
+        User user = new User(this.rs.getInt(1),
+            this.rs.getString(2),
+            this.rs.getString(3),
+            this.rs.getString(4), this.rs.getString(5));
+
+        this.userList.add(user);
+      }
+
+    } catch (SQLException e) {
+      e.printStackTrace();
+    }
+
+    return this.userList;
   }
 
   @Override
-  public int updateParamById(int UserId, String paramToUpdate, String newValue) {
+  public int updateParamById(int userId, String paramToUpdate, String newValue) {
+    this.con = DatabaseConnection.getMyDBConnection();
+    this.userList.clear();
 
-    return 0;
+    int i = 0;
+    try {
+
+      
+      this.pst = this.con.prepareStatement("UPDATE user SET "  + paramToUpdate + " = ? WHERE User_ID = ?");
+      this.pst.setString(1, newValue);
+      this.pst.setInt(2, userId);
+
+      i = this.pst.executeUpdate();
+      
+    } catch (SQLException e) {
+      e.printStackTrace();
+    }
+
+
+
+
+    return i;
 
   }
 
