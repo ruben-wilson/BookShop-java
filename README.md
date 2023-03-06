@@ -137,3 +137,23 @@ edit my acount details
 as a user 
 i would like to see my order
 history 
+
+## SPRINT FIVE
+(use factory class and make db class static)
+
+as a user
+i would like to be able to
+see my last ten orders on my profile page
+
+as a user 
+in my basket i would like
+to see total amount
+
+as a user 
+i want to see my total orders 
+
+as a user
+i want all pages nicely styled 
+
+as a user 
+i want my password encrypted

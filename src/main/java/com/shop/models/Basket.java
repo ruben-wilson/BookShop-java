@@ -30,5 +30,9 @@ public class Basket {
 
   public void setBooks(List<Book> books) {
     this.books = books;
-  }  
+  }
+
+  public void resetBasket() {
+    this.books.clear();
+  }
 }

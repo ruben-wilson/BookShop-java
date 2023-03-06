@@ -35,7 +35,6 @@ public class OrderHistoryServlet extends HttpServlet {
     System.out.println(allOrders + " OrderHistory :35");
     session.setAttribute("allOrders", allOrders);
 
-    
     resp.sendRedirect("Account");
   }
 

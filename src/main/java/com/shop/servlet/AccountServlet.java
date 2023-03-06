@@ -28,21 +28,14 @@ public class AccountServlet extends HttpServlet {
     RequestDispatcher view = req.getRequestDispatcher("./views/account.jsp");
     HttpSession session = req.getSession(false);
 
-    UserDAOImpl userDAO = new UserDAOImpl();
+    if(session.getAttribute("allOrders") == null){
+      System.out.println("32 AccountServlet fetching all OrderHistory" );
+      resp.sendRedirect("OrderHistory");
+    }else{
 
-    System.out.println(session.getAttribute("name") + " acount servelt :33");
-    User user = userDAO.findByParam(((String) session.getAttribute("name"))).get(0);
-    
-    
-
-    if (user != null) {
-      session.setAttribute("userID", user.getUserID());
-      session.setAttribute("name", user.getName());
-      session.setAttribute("surname", user.getSurname());
-      session.setAttribute("email", user.getEmail());
+      view.forward(req, resp);
     }
 
-    view.forward(req, resp);
   }
 
   public void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

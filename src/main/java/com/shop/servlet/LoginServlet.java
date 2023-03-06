@@ -31,6 +31,7 @@ public class LoginServlet extends HttpServlet {
     UserDAOImpl userDAO = new UserDAOImpl();
     User user = userDAO.userLogin(email, pword);
 
+    System.out.println("34 login servlet "  + user);
     if(user != null){
       HttpSession session = req.getSession(true);
       session.setAttribute("userID", user.getUserID());

@@ -34,7 +34,7 @@ public class SaleServlet extends HttpServlet {
       DataAccessObject<Sale> saleDAO = new SaleDAOImpI();
       
       System.out.println("here in sale ");
-      
+
       LocalDate currentDate = LocalDate.now();
       DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
       String dateString = currentDate.format(formatter);
@@ -46,6 +46,8 @@ public class SaleServlet extends HttpServlet {
             });
 
     }
+    basket.resetBasket();
+    session.setAttribute("basket", basket);
 
     resp.sendRedirect("Basket");
   }
