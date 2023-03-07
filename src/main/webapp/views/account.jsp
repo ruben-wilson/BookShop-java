@@ -10,49 +10,89 @@
       <meta charset="UTF-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Home</title>
+      <title>Account</title>
       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     </head>
     <body>
       <section class="h-100 gradient-custom-2">
+        <!-- nav bar -->
+
+        <nav class="navbar navbar-expand-lg bg-body-tertiary bg-primary" data-bs-theme="dark">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="Home">BookShop</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="Home">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active" href=${sessionScope.href}>${sessionScope.isLogged}</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active" href="Basket">view basket</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active" href=${sessionScope.logOutHref}>${sessionScope.logOut}</a>
+                </li>
+              </ul>
+              <form class="d-flex" role="search" action="SearchBook" method="post">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="bookTitle">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+
+
+
         <div class="container py-5 h-100">
           <div class="row d-flex justify-content-center align-items-center h-100">
             <div class="col col-lg-9 col-xl-7">
               <div class="card">
                 <div class="rounded-top text-white d-flex flex-row" style="background-color: #000; height:200px;">
+
+                  
                   <div class="ms-4 mt-5 d-flex flex-column" style="width: 150px;">
-                    <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-profiles/avatar-1.webp"
+                   
+                    <img src="https://img.freepik.com/premium-vector/avatar-profile-icon-vector-illustration_276184-165.jpg?w=2000"
                       alt="Generic placeholder image" class="img-fluid img-thumbnail mt-4 mb-2"
                       style="width: 150px; z-index: 1">
-                    <button type="button" onclick="createForm()" class="btn btn-outline-dark" data-mdb-ripple-color="dark" style="z-index: 1;">
-                      Edit profile
-                    </button>
+                      <form action="Account" method="post">
+                        <button type="submit" id="editProfileButton" class="btn btn-outline-dark" data-mdb-ripple-color="dark"
+                          style="z-index: 1;">
+                          Edit profile
+                        </button>
+                      </form>
+                      
+                     
                   </div>
+                 
                   <div class="ms-3" style="margin-top: 130px;">
                     <h5>${sessionScope.name} ${sessionScope.surname}</h5>
                     <p>Email: ${sessionScope.email}</p>
                   </div>
                 </div>
                 <div class="p-4 text-black" style="background-color: #f8f9fa;">
+                  <form action="Account" method="post">
+                    <button type="submit" id="editProfileButton" class="btn btn-outline-dark" data-mdb-ripple-color="dark"
+                      style="z-index: 1;">
+                      Edit profile
+                    </button>
+                  </form>
                   <div class="d-flex justify-content-end text-center py-1">
-                    <div>
-                      <p class="mb-1 h5">253</p>
-                      <p class="small text-muted mb-0">Photos</p>
-                    </div>
-                    <div class="px-3">
-                      <p class="mb-1 h5">1026</p>
-                      <p class="small text-muted mb-0">Followers</p>
-                    </div>
-                    <div>
-                      <p class="mb-1 h5">478</p>
-                      <p class="small text-muted mb-0">Following</p>
+                      <p class="mb-1 h5">${totalOrders} </p>
+                      <p class="small text-muted mb-0">Total Purchases</p>
                     </div>
                   </div>
                 </div>
-                  <div class="d-flex justify-content-between align-items-center mb-4" style="padding-left: 2rem; padding-right: 2rem;">
-                    <p class="lead fw-normal mb-0">Recent Orders</p>
-                      <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom">Toggle bottom offcanvas</button>
+                  <div class="d-flex mb-2 mt-2" style="justify-content: center; padding-left: 2rem; padding-right: 2rem;" >
+                      <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom">View Your Order History</button>
                   </div>
 
                   <!-- pop up order History menu -->
@@ -89,97 +129,52 @@
 
               </div>
             </div>
+
+            <!-- Menu to update account details! -->
+          <%if(session.getAttribute("edit") == "true"){%>
+            <div class="card" style="border-radius: 15px;">
+            <div class="card-body p-5">
+              <h2 class="text-uppercase text-center mb-5">Update Account details</h2>
+            
+              <form action="Account" method="post">
+            
+                <div class="form-outline mb-4">
+                  <input name="name" type="text" id="form3Example1cg" class="form-control form-control-lg" />
+                  <label class="form-label" for="form3Example1cg">First name</label>
+                </div>
+            
+                <div class="form-outline mb-4">
+                  <input name="surname" type="text" id="form3Example3cg" class="form-control form-control-lg" />
+                  <label class="form-label" for="form3Example3cg">Surname</label>
+                </div>
+            
+                <div class="form-outline mb-4">
+                  <input name="email" type="email" id="form3Example4cg" class="form-control form-control-lg" />
+                  <label class="form-label" for="form3Example4cg">Email</label>
+                </div>
+            
+                <div class="form-outline mb-4">
+                  <input name="password" type="password" id="form3Example4cdg" class="form-control form-control-lg" />
+                  <label class="form-label" for="form3Example4cdg">Password</label>
+                </div>
+   
+                <div class="d-flex justify-content-center">
+                  <button type="submit" class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Update Account</button>
+                </div>
+            
+              </form>
+            
+            </div>
+            </div>
+          <%}%>
+
           </div>
         </div>
       </section>
-
-      <div id="main" style="justify-content: center;">
-        <div>
-          <ul>
-            <li>
-              <p>Name: ${sessionScope.name}</p>
-            </li>
-            <li>
-              <p>Surname: ${sessionScope.surname}</p>
-            </li>
-            <li>
-              <p>Email: ${sessionScope.email}</p>
-            </li>
-            <li>
-              <form action="OrderHistory" method="get">
-                <button type="submit">see Order History</button>
-              </form>
-            </li>
-            <li>
-              <button onclick="createForm()">Edit account details</button>
-            </li>
-          </ul>
-        </div>
-        <% if(session.getAttribute("allOrders") != null){%>
-          <div>
-            All Orders
-            <ul>
-              <% List<Sale> allOrders = (List<Sale>) session.getAttribute("allOrders");
-                  for(Sale s : allOrders){
-                  %>
-                  <li>
-                    <p>item: <%=s.getBookTitle()%> purchase date: <%=s.getDate()%>
-                    </p>
-                  </li>
-                  <li>
-                    <p>Author: <%=s.getAuthor()%>
-                    </p>
-                  </li>
-                  <li>
-                    <p>price:£<%=s.getPrice()%>
-                    </p>
-                  </li>
-                  <% } %>
-            </ul>
-          </div>
-        <% }%>
-      </div>
-
-
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"
       integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD" crossorigin="anonymous"></script>
     </body>
     <script>
-
-       const createForm = () => {
-          let form = document.createElement("form");
-          form.setAttribute("method", "post");
-          form.setAttribute("action", "Account");
-
-          let input1 = document.createElement("input");
-          input1.setAttribute("type", "text");
-          input1.setAttribute("name", "name");
-          input1.setAttribute("placeholder", "Enter your new name");
-
-          let input2 = document.createElement("input");
-          input2.setAttribute("type", "text");
-          input2.setAttribute("name", "surname");
-          input2.setAttribute("placeholder", "Enter your new username");
-
-          let input3 = document.createElement("input");
-          input3.setAttribute("type", "text");
-          input3.setAttribute("name", "email");
-          input3.setAttribute("placeholder", "Enter your new email");
-
-          let button = document.createElement("button");
-          button.setAttribute("type", "submit");
-          button.innerHTML = "Submit";
-
-          form.appendChild(input1);
-          form.appendChild(input2);
-          form.appendChild(input3);
-          form.appendChild(button);
-
-          document.body.appendChild(form);
-        }
-
-
     </script>
-
     </html>

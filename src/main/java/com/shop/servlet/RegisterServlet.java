@@ -19,7 +19,7 @@ public class RegisterServlet extends HttpServlet{
   @Override
   protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
    
-    RequestDispatcher view = req.getRequestDispatcher("./views/success.jsp");
+    RequestDispatcher view = req.getRequestDispatcher("./views/signup.jsp");
     view.forward(req, resp);
   }
 
@@ -39,13 +39,17 @@ public class RegisterServlet extends HttpServlet{
 
       if(i == 0){
         throw new Error("user not created");
+      }else{
+        HttpSession session = req.getSession(true);
+
+        User registeredUser = userDAO.findByParam(name).get(0);
+
+        session.setAttribute("userID", registeredUser.getUserID());
+        session.setAttribute("name", registeredUser.getName());
+        session.setAttribute("surname", registeredUser.getPassword());
+        session.setAttribute("email", registeredUser.getEmail());
+
+        resp.sendRedirect("HomePageServlet");
       }
-
-      HttpSession session = req.getSession(true);
-      session.setAttribute("name", name);
-      session.setAttribute("surname", surname);
-      session.setAttribute("email", email);
-
-      resp.sendRedirect("HomePageServlet");
   }
 }

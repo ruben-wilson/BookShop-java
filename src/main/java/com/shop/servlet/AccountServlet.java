@@ -43,17 +43,34 @@ public class AccountServlet extends HttpServlet {
 
     HttpSession session = req.getSession(false);
 
-    if(req.getParameter("name") != null ){
-      userDAO.updateParamById(((int) session.getAttribute("userID")), "Name", req.getParameter("name"));
-    }
-    if(req.getParameter("surname") != null) {
-          userDAO.updateParamById(((int) session.getAttribute("userID")), "Username", req.getParameter("surname"));
-    } 
-    if (req.getParameter("email") != null) {
+    if(session.getAttribute("edit") == "false" || session.getAttribute("edit") == null ){
+
+     session.setAttribute("edit", "true");
+     resp.sendRedirect("Account");
+    }else{
+
+      session.setAttribute("edit", "false");
+
+      
+
+      if (req.getParameter("name") != "") {
+        userDAO.updateParamById(((int) session.getAttribute("userID")), "Name", req.getParameter("name"));
+        session.setAttribute("name", req.getParameter("name"));
+      }
+      if (req.getParameter("surname") != "") {
+        userDAO.updateParamById(((int) session.getAttribute("userID")), "Username", req.getParameter("surname"));
+        session.setAttribute("surname", req.getParameter("surname"));
+      }
+      if (req.getParameter("email") != "") {
         userDAO.updateParamById(((int) session.getAttribute("userID")), "Email", req.getParameter("email"));
+        session.setAttribute("email", req.getParameter("email"));
+      }
+
+      resp.sendRedirect("Account");
+
     }
- 
-    resp.sendRedirect("Account");
+
+    
   }
 
 }

@@ -14,25 +14,23 @@
     BookPage
 
     <div style="justify-content: center;">
-      <div>
-        <ul>
-          <li>
-            <p>book title: ${book.getTitle()}</p>
-          </li>
-          <li>
-            <p>book author: ${book.getAuthor()}</p>
-          </li>
-          <li>
-            <p>description: ${book.getDescription()}</p>
-          </li>
-          <li>
-            <p>price: ${book.getPrice()}</p>
-          </li>
-          <li>
-            <button type="submit" action="basket">Add to basket </button>
-          </li>
-        </ul>
-
+      <div class="card"
+        style="width: 24.33%; margin-left: auto; margin-right: auto; margin-top: 0.5rem; margin-bottom: 0.5rem;max-height: 12rem; ">
+        <div class="card-body" style="overflow: auto;">
+          <h5 class="card-title text-center">
+            ${book.getTitle()}
+          </h5>
+          <p class="card-text">Author: ${book.getAuthor()}
+          </p>
+          <h6 class="card-subtitle mb-2 text-muted">${book.getDescription()}
+          </h6>
+          <h6 class="card-subtitle mb-2 text-muted">£ <%=b.getPrice()%>
+          </h6>
+          <form method="post" action="Basket">
+            <input type="hidden" name="bookTitle" value="<%=b.getTitle()%>">
+            <button class="btn btn-primary" type="submit">Add to basket</button>
+          </form>
+        </div>
       </div>
     </div>
     

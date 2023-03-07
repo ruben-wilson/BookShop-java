@@ -28,6 +28,12 @@ public class BasketServlet extends HttpServlet{
       
       resp.sendRedirect("Login");
     }else{
+
+      if(session.getAttribute("basket") != null){
+        Basket basket = (Basket) session.getAttribute("basket");
+        req.setAttribute("totalItems", basket.howManyItems());
+        req.setAttribute("totalPrice", basket.totalPrice());
+      }
       
       view.forward(req, resp);
     }

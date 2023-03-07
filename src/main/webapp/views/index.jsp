@@ -53,8 +53,7 @@
             <div class="card" style="width: 24.33%; margin-left: auto; margin-right: auto; margin-top: 0.5rem; margin-bottom: 0.5rem;max-height: 12rem; ">
               <div class="card-body" style="overflow: auto;">
                 <h5 class="card-title text-center"><%=b.getTitle()%></h5>
-                <h6 class="card-subtitle mb-2 text-muted">Author: <%=b.getAuthor()%></h6>
-                <p class="card-text"><%=b.getDescription()%>
+                <p class="card-text">Author: <%=b.getAuthor()%>
                 </p>
                 <h6 class="card-subtitle mb-2 text-muted">£ <%=b.getPrice()%>
                 </h6>

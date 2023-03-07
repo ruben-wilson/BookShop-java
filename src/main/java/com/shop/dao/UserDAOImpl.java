@@ -148,9 +148,8 @@ public class UserDAOImpl implements DataAccessObject<User> {
     try {
 
       
-      this.pst = this.con.prepareStatement("UPDATE user SET "  + paramToUpdate + " = ? WHERE User_ID = ?");
-      this.pst.setString(1, newValue);
-      this.pst.setInt(2, userId);
+      this.pst = this.con.prepareStatement("UPDATE user SET " + paramToUpdate  + " = " + "'" + newValue + "'" + "WHERE User_ID = ?");
+      this.pst.setInt(1, userId);
 
       i = this.pst.executeUpdate();
       

@@ -32,6 +32,20 @@ public class Basket {
     this.books = books;
   }
 
+  public int howManyItems(){
+    return this.books.size();
+  }
+
+  public double totalPrice(){
+
+    double totalPrice = this.books.stream()
+                                  .map(b -> b.getPrice())
+                                  .mapToDouble(Double::doubleValue)
+                                  .sum();
+    return totalPrice;
+             
+  }
+
   public void resetBasket() {
     this.books.clear();
   }
