@@ -12,7 +12,6 @@ public class DatabaseConnection {
   private DatabaseConnection() {
 
   }
-
   public static Connection getMyDBConnection() {
 
 

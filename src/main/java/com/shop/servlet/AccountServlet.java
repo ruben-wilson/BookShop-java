@@ -21,18 +21,18 @@ public class AccountServlet extends HttpServlet {
   public void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
     RequestDispatcher view = req.getRequestDispatcher("./views/account.jsp");
     HttpSession session = req.getSession(false);
-
+    
     if(session.getAttribute("allOrders") == null){
       System.out.println("32 AccountServlet fetching all OrderHistory" );
       resp.sendRedirect("OrderHistory");
     }else{
-
       view.forward(req, resp);
     }
 
   }
 
   public void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
     DataAccessObject<User> userDAO = new UserDAOImpl();
 
     HttpSession session = req.getSession(false);
@@ -44,8 +44,6 @@ public class AccountServlet extends HttpServlet {
     }else{
 
       session.setAttribute("edit", "false");
-
-      
 
       if (req.getParameter("name") != "") {
         userDAO.updateParamById(((int) session.getAttribute("userID")), "Name", req.getParameter("name"));
