@@ -37,7 +37,6 @@ public class SaleServlet extends HttpServlet {
             .forEach( b -> {
               saleDAO.addObject(new Sale( ((int) session.getAttribute("userID")), b.getBook_ID(), dateString, b.getPrice()));
             });
-
     }
     basket.resetBasket();
     session.setAttribute("basket", basket);

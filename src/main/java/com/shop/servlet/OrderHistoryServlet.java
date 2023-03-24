@@ -22,7 +22,6 @@ public class OrderHistoryServlet extends HttpServlet {
     SaleDAOImpI saleDAO = new SaleDAOImpI();
     List<Sale> allOrders = saleDAO.findByUserID((int) session.getAttribute("userID"));
 
-    System.out.println(allOrders + " OrderHistory :35");
     session.setAttribute("allOrders", allOrders);
     session.setAttribute("totalOrders", allOrders.size());
 

@@ -43,7 +43,6 @@ public class Basket {
                                   .mapToDouble(Double::doubleValue)
                                   .sum();
     return totalPrice;
-             
   }
 
   public void resetBasket() {

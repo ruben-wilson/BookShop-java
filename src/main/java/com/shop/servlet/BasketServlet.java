@@ -72,7 +72,6 @@ public class BasketServlet extends HttpServlet{
     Basket basket = (Basket) session.getAttribute("basket");
     basket.deleteBook(req.getParameter("bookTitle"));
 
-    System.out.println("her at deleteBook");
     session.setAttribute("basket", basket);
 
     resp.sendRedirect("Basket");

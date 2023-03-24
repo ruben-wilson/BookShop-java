@@ -9,7 +9,7 @@ import com.shop.models.Book;
 import com.shop.models.Sale;
 import com.shop.models.User;
 
-public class EISFactory {
+public class BSSFactory {
 
   public static DataAccessObject<User> getUserDAO(){
     return new UserDAOImpl();

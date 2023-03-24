@@ -1,5 +1,4 @@
 com/shop/servlet/BasketDeleteServlet.class
-com/shop/utils/EISFactory.class
 com/shop/servlet/SearchBooksServlet.class
 com/shop/dao/DataAccessObject.class
 com/shop/models/Basket.class
