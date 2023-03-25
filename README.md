@@ -7,14 +7,14 @@
 
 ## Usage
 
-- To use must have maven installed.
+- Must have Maven installed.
 - I used Community Server Connection extension for vsCode to run the tomcat server that served the .WAR file.
 
-- ```linux
+```linux
   git clone https://github.com/ruben-wilson/BookShop-java.git
   cd BSHOP
   mvn compile
-  ```
+```
 - now run the "bshop-1.war" on a tomcat-9.0 server on Community Server Connection.
 
 ## Screenshots of Application
