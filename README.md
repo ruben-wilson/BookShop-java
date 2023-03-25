@@ -9,7 +9,10 @@
 
 ### index page
 
-![index](./screenshots/indexPage.png)
+ <img src="./screenshots/indexPage.png" size={30}>
+
+
+![index](./screenshots/indexLoggedIn.png)
 
 ## Overview-Scenario and Design
 
