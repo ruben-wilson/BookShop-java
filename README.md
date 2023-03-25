@@ -8,14 +8,17 @@
 ## Screenshots of Application
 
 ### index page
-<div style="display: flex;">
-  <img style="flex: 1;" src="./screenshots/indexPage.png" width="50%" height="50%">
-  <img style="flex: 2;" src="./screenshots/indexPage.png" width="50%" height="50%">
-</div>
- 
+<img style="flex: 1;" src="./screenshots/indexPage.png" width="75%" height="75%">
+  
+### index page - logged in
+<img style="flex: 2;" src="./screenshots/indexLoggedIn.png" width="75%" height="75%">
 
+### Account page
+<img style="flex: 2;" src="./screenshots/accountPage.png" width="75%" height="75%">
 
-![index](./screenshots/indexLoggedIn.png)
+### Shopping Cart
+<img style="flex: 2;" src="./screenshots/shoppingCart.png" width="75%" height="75%">
+
 
 ## Overview-Scenario and Design
 
