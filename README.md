@@ -1,33 +1,42 @@
-# Assessment #2 
+# Assessment #2
 
 - Book StoreObjective
-  The objective of this assessment is to build a Java webapplication using learning outcomes of Java modulesbased on a scenario. 
+  The objective of this assessment is to build a Java webapplication using learning outcomes of Java modulesbased on a scenario.
+
+## Screenshots of Application
+
+### index page
+![dbGraph](./graphs/dbgraph.png)
 
 ## Overview-Scenario and Design
-  You  have been  asked  to  design  and  implement a 3-Tier based Java webapplication for a bookstore. The application  will  be  made  available  for  two  user  groups:  Registered  User  and Unregistered  User.  Each  user  group  is  to  have  access  to  their  own  facilities  and  interlinked functionalities. Unregistered users can view Book Store/browse books but cannot access all the facilities and features compared to those a Registered User has. 
+
+  You  have been  asked  to  design  and  implement a 3-Tier based Java webapplication for a bookstore. The application  will  be  made  available  for  two  user  groups:  Registered  User  and Unregistered  User.  Each  user  group  is  to  have  access  to  their  own  facilities  and  interlinked functionalities. Unregistered users can view Book Store/browse books but cannot access all the facilities and features compared to those a Registered User has.
 
   **Facilities provided to the Unregistered User**
-  - Ability to view list of books displayed by the application
-  - Ability to search Books
-  - Ability to read a specific book information (Overview, Authors, etc)
-  - Ability to add book to shopping basket
-  - Ability to view the shopping basket
-  - Ability to modify the shopping basket
-  - Ability to choose to proceed and checkout option
+
+- Ability to view list of books displayed by the application
+- Ability to search Books
+- Ability to read a specific book information (Overview, Authors, etc)
+- Ability to add book to shopping basket
+- Ability to view the shopping basket
+- Ability to modify the shopping basket
+- Ability to choose to proceed and checkout option
   
   **Facilities provided to the Registered User**
-  - Ability to access order history
-  - Ability to view personal account details
-  - Ability to modify account details such as firstname, lastname, email id and password
-  - Ability to purchase books
+
+- Ability to access order history
+- Ability to view personal account details
+- Ability to modify account details such as firstname, lastname, email id and password
+- Ability to purchase books
   
- **Further details for an Unregistered and Registered Users** 
+ **Further details for an Unregistered and Registered Users**
  An  Unregistered  User  can  view list  of books and just look and read  the basic book details provided. After that if the user is interested tthe user can register with Book Storeapplication.The registration process prompts the user to input all necessary details to register like firstname, lastname, email id and password etc. After registration, the user will have a unique email id and a password for logging in to theBook Store. Registered and Unregistered Users have a search option to search books by giving the name of the author(s) or the ISBN of the book. Registered Users can add books to shopping basket and purchase them.
 
+## Database structure
 
- ## Database structure 
 ![dbGraph](./graphs/dbgraph.png)
 **create statements**
+
 ```sql
 CREATE table Book(
   Book_ID INT NOT NULL AUTO_INCREMENT,
@@ -59,6 +68,7 @@ CREATE table Sale(
   FOREIGN KEY (Book_ID) REFERENCES Book(Book_ID)
 );
 ```
+
 **seed data**
 
 ```sql
@@ -79,81 +89,81 @@ SELECT u.Name, b.Title, b.Price, b.genre,
         INNER JOIN user u ON s.User_ID = u.User_ID;
 ```
 
-
-## website layout first draft 
+## website layout first draft
 
 ![webdesign](./graphs/basicwebdesign.png)
 
-## SPRINT ONE 
+## SPRINT ONE
 
-as a user 
-i should be able to see all books 
+as a user
+i should be able to see all books
 
-as a user 
-i should be able to sign up 
+as a user
+i should be able to sign up
 
-as a user 
-i should be able to 
+as a user
+i should be able to
 login/out
 
 ## SPRINT TWO
 
-as a user 
-i should be able to search 
-for a book by title 
+as a user
+i should be able to search
+for a book by title
 
-as a user 
-i should be able to see a 
-specific books details 
+as a user
+i should be able to see a
+specific books details
 "information (Overview, Authors, etc)"
 
-## SPRINT THREE 
+## SPRINT THREE
 
-as a user 
+as a user
 i should be able to add a book to shopping basket
 
-as a user 
-i should be able to view my shopping basket 
+as a user
+i should be able to view my shopping basket
 
-as a user 
-i should be able to modify my shopping basket 
+as a user
+i should be able to modify my shopping basket
 
-as a user 
+as a user
 i should be able to procced to a checkout option
 
-## SPRINT FOUR 
+## SPRINT FOUR
 
 (Back Log)
-"as a user 
+"as a user
 i should be able to procced to a checkout option"
 
-as a user 
-i would like to be able to see an account page 
+as a user
+i would like to be able to see an account page
 
-as a user 
+as a user
 i would like to be able to
 edit my acount details
 
-as a user 
+as a user
 i would like to see my order
-history 
+history
 
 ## SPRINT FIVE
+
 (use factory class and make db class static)
 
 as a user
 i would like to be able to
 see my last ten orders on my profile page
 
-as a user 
+as a user
 in my basket i would like
 to see total amount
 
-as a user 
-i want to see my total orders 
+as a user
+i want to see my total orders
 
 as a user
-i want all pages nicely styled 
+i want all pages nicely styled
 
-as a user 
+as a user
 i want my password encrypted
