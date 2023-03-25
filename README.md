@@ -10,7 +10,7 @@
 ### index page
 <div style="display: flex;">
   <img style="flex: 1;" src="./screenshots/indexPage.png" width="50%" height="50%">
-  <img src="./screenshots/indexPage.png" width="50%" height="50%">
+  <img style="flex: 1;" src="./screenshots/indexPage.png" width="50%" height="50%">
 </div>
  
 
