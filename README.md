@@ -9,7 +9,7 @@
 
 ### index page
 
- <img src="./screenshots/indexPage.png" size=30%>
+ <img src="./screenshots/indexPage.png" size="30%">
 
 
 ![index](./screenshots/indexLoggedIn.png)
