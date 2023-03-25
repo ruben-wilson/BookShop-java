@@ -5,6 +5,18 @@
   The objective of this assessment is to build a Java webApplication using learning outcomes of Java modules based on a scenario.
   You  have been  asked  to  design  and  implement a 3-Tier based Java webApplication for a bookstore.
 
+## Usage
+
+- To use must have maven installed.
+- I used Community Server Connection extension for vsCode to run the tomcat server that served the .WAR file.
+
+- ```linux
+  git clone https://github.com/ruben-wilson/BookShop-java.git
+  cd BSHOP
+  mvn compile
+  ```
+- now run the "bshop-1.war" on a tomcat-9.0 server on Community Server Connection.
+
 ## Screenshots of Application
 
 ### index page
