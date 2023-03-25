@@ -8,7 +8,7 @@
 ## Screenshots of Application
 
 ### index page
-<img style="flex: 1;" src="./screenshots/indexPage.png" width="75%" height="75%">
+<img style="flex: 1;" src="./screenshots/indexPagee.png" width="75%" height="75%">
   
 ### index page - logged in
 <img style="flex: 2;" src="./screenshots/indexLoggedIn.png" width="75%" height="75%">
