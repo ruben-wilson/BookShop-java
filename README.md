@@ -8,8 +8,11 @@
 ## Screenshots of Application
 
 ### index page
-
- <img src="./screenshots/indexPage.png" width="30%" height="30%">
+<div style="display: flex;">
+  <img src="./screenshots/indexPage.png" width="50%" height="50%">
+  <img src="./screenshots/indexPage.png" width="50%" height="50%">
+</div>
+ 
 
 
 ![index](./screenshots/indexLoggedIn.png)
