@@ -14,6 +14,7 @@ import javax.servlet.http.HttpSession;
 import com.shop.dao.BookDAOImpl;
 import com.shop.dao.DataAccessObject;
 import com.shop.models.Book;
+import com.shop.utils.BSSFactory;
 
 @WebServlet(urlPatterns = "/")
 public class HomePageServlet extends HttpServlet {
@@ -23,7 +24,7 @@ public class HomePageServlet extends HttpServlet {
     HttpSession session = req.getSession();
     RequestDispatcher view = req.getRequestDispatcher("./views/index.jsp");
 
-    DataAccessObject<Book> bookDAO = new BookDAOImpl();
+    DataAccessObject<Book> bookDAO = BSSFactory.getBookDAO();
     List<Book> allBooks = bookDAO.returnAll();
     req.setAttribute("allBooks", allBooks);
 
@@ -44,12 +45,7 @@ public class HomePageServlet extends HttpServlet {
     
       view.forward(req, resp);
     }
-
-
   
   }
 
-  @Override
-  protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-  }
 }

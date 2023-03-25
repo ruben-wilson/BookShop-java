@@ -14,6 +14,7 @@ import com.shop.dao.DataAccessObject;
 import com.shop.dao.SaleDAOImpI;
 import com.shop.models.Basket;
 import com.shop.models.Sale;
+import com.shop.utils.BSSFactory;
 
 @WebServlet(urlPatterns = "/Sale")
 
@@ -24,9 +25,7 @@ public class SaleServlet extends HttpServlet {
 
     Basket basket = (Basket) session.getAttribute("basket");
     if(basket != null){
-      DataAccessObject<Sale> saleDAO = new SaleDAOImpI();
-      
-      System.out.println("here in sale ");
+      DataAccessObject<Sale> saleDAO = BSSFactory.getSaleDAO();
 
       LocalDate currentDate = LocalDate.now();
       DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");

@@ -10,8 +10,8 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.shop.dao.DataAccessObject;
-import com.shop.dao.UserDAOImpl;
 import com.shop.models.User;
+import com.shop.utils.BSSFactory;
 
 
 @WebServlet(urlPatterns = "/Register")
@@ -32,9 +32,10 @@ public class RegisterServlet extends HttpServlet{
       String pword = (String) req.getParameter("password");
       String email = (String) req.getParameter("email");
 
-      User user = new User(0, name, surname, pword, email);
+      
+      User user = BSSFactory.getUserObj(0, name, surname, pword, email);
 
-      DataAccessObject<User> userDAO = new UserDAOImpl();
+      DataAccessObject<User> userDAO = BSSFactory.getUserDAO();
       int i = userDAO.addObject(user);
 
       if(i == 0){

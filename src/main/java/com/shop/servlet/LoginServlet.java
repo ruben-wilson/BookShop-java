@@ -12,6 +12,7 @@ import javax.servlet.http.HttpSession;
 
 import com.shop.dao.UserDAOImpl;
 import com.shop.models.User;
+import com.shop.utils.BSSFactory;
 
 @WebServlet(urlPatterns = "/Login")
 public class LoginServlet extends HttpServlet {
@@ -28,7 +29,7 @@ public class LoginServlet extends HttpServlet {
     String pword = (String) req.getParameter("password");
     String email = (String) req.getParameter("email");
 
-    UserDAOImpl userDAO = new UserDAOImpl();
+    UserDAOImpl userDAO = (UserDAOImpl) BSSFactory.getUserDAO();
     User user = userDAO.userLogin(email, pword);
     
     if(user != null){

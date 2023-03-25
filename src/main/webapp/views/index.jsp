@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="java.util.List" %>
 <%@ page import="com.shop.models.Book" %>
@@ -45,26 +46,24 @@
     </nav>
 
         <div class="container" style="display: flex; padding: 5rem; flex-wrap: wrap;">
-           <%
-              List<Book> allObjects = (List<Book>) request.getAttribute("allBooks");
-                  for(Book b : allObjects){
-            %>
 
-            <div class="card" style="width: 24.33%; margin-left: auto; margin-right: auto; margin-top: 0.5rem; margin-bottom: 0.5rem;max-height: 12rem; ">
+          <c:forEach var="book" items="${allBooks}">
+            <div class="card"
+              style="width: 24.33%; margin-left: auto; margin-right: auto; margin-top: 0.5rem; margin-bottom: 0.5rem;max-height: 12rem; ">
               <div class="card-body" style="overflow: auto;">
-                <h5 class="card-title text-center"><%=b.getTitle()%></h5>
-                <p class="card-text">Author: <%=b.getAuthor()%>
+                <h5 class="card-title text-center">${book.title}</h5>
+                <p class="card-text">Author: ${book.author}
                 </p>
-                <h6 class="card-subtitle mb-2 text-muted">£ <%=b.getPrice()%>
+                <h6 class="card-subtitle mb-2 text-muted">£ ${book.price}
                 </h6>
                 <form method="post" action="Basket">
-                  <input type="hidden" name="bookTitle" value="<%=b.getTitle()%>">
+                  <input type="hidden" name="bookTitle" value="${book.title}">
                   <button class="btn btn-primary" type="submit">Add to basket</button>
                 </form>
               </div>
             </div>
-           
-            <% } %>
+          </c:forEach>
+
           </div>
 
       

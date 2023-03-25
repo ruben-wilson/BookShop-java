@@ -14,6 +14,7 @@ import com.shop.dao.BookDAOImpl;
 import com.shop.dao.DataAccessObject;
 import com.shop.models.Basket;
 import com.shop.models.Book;
+import com.shop.utils.BSSFactory;
 
 
 @WebServlet(urlPatterns = "/Basket")
@@ -47,13 +48,13 @@ public class BasketServlet extends HttpServlet{
 
       String bookTitle = req.getParameter("bookTitle");
 
-      DataAccessObject<Book> bookDAO = new BookDAOImpl();
+      DataAccessObject<Book> bookDAO = BSSFactory.getBookDAO();
       List<Book> allBooks = bookDAO.findByParam(bookTitle);
       Book addedBook = allBooks.get(0);
 
       if (session.getAttribute("basket") == null) {
 
-        Basket basket = new Basket();
+        Basket basket = BSSFactory.getBasketObj();
         basket.addBook(addedBook);
         session.setAttribute("basket", basket);
       } else {

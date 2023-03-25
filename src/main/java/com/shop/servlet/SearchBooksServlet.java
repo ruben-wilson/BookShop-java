@@ -15,6 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.shop.dao.BookDAOImpl;
 import com.shop.dao.DataAccessObject;
 import com.shop.models.Book;
+import com.shop.utils.BSSFactory;
 
 @WebServlet(urlPatterns = "/SearchBook")
 public class SearchBooksServlet extends HttpServlet {
@@ -25,7 +26,7 @@ public class SearchBooksServlet extends HttpServlet {
     String bookTitle = req.getParameter("bookTitle");
     RequestDispatcher view = req.getRequestDispatcher("./views/book.jsp");
 
-    DataAccessObject<Book> bookDAO = new BookDAOImpl();
+    DataAccessObject<Book> bookDAO = BSSFactory.getBookDAO();
     List<Book> resultSet = bookDAO.findByParam(bookTitle);
     System.out.println(resultSet.get(0));
 

@@ -11,6 +11,7 @@ import javax.servlet.http.HttpSession;
 
 import com.shop.dao.SaleDAOImpI;
 import com.shop.models.Sale;
+import com.shop.utils.BSSFactory;
 
 @WebServlet(urlPatterns = "/OrderHistory")
 
@@ -19,7 +20,7 @@ public class OrderHistoryServlet extends HttpServlet {
   public void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
     HttpSession session = req.getSession(false);
 
-    SaleDAOImpI saleDAO = new SaleDAOImpI();
+    SaleDAOImpI saleDAO = (SaleDAOImpI) BSSFactory.getSaleDAO();
     List<Sale> allOrders = saleDAO.findByUserID((int) session.getAttribute("userID"));
 
     session.setAttribute("allOrders", allOrders);

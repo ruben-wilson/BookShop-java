@@ -11,19 +11,19 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.shop.dao.DataAccessObject;
-import com.shop.dao.UserDAOImpl;
 import com.shop.models.User;
+import com.shop.utils.BSSFactory;
 
 @WebServlet(urlPatterns = "/Account")
 
 public class AccountServlet extends HttpServlet {
+
 
   public void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
     RequestDispatcher view = req.getRequestDispatcher("./views/account.jsp");
     HttpSession session = req.getSession(false);
     
     if(session.getAttribute("allOrders") == null){
-      System.out.println("32 AccountServlet fetching all OrderHistory" );
       resp.sendRedirect("OrderHistory");
     }else{
       view.forward(req, resp);
@@ -33,7 +33,8 @@ public class AccountServlet extends HttpServlet {
 
   public void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-    DataAccessObject<User> userDAO = new UserDAOImpl();
+
+    DataAccessObject<User> userDAO = BSSFactory.getUserDAO();
 
     HttpSession session = req.getSession(false);
 
