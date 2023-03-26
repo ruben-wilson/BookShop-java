@@ -17,7 +17,7 @@
 
 ## Video Walk Through
 
-[![walk through](./screenshots/indexLoggedIn.png)](<https://youtu.be/t83B3XQPR54> "video walk through")
+[![walk through](./screenshots/indexLoggedIn.png)](<https://youtu.be/tXz1mgpxY24> "video walk through")
 
 ### index page
 <img style="flex: 1;" src="./screenshots/indexPagee.png" width="75%" height="75%">
