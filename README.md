@@ -16,7 +16,7 @@
 - now run the "bshop-1.war" on a tomcat-9.0 server on Community Server Connection.
 
 ## Video Walk Through
-
+click picture below to see video walk through:
 [![walk through](./screenshots/indexLoggedIn.png)](<https://youtu.be/tXz1mgpxY24> "video walk through")
 
 ### index page
