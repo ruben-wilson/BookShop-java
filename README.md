@@ -15,7 +15,9 @@
 -mvn compile.
 - now run the "bshop-1.war" on a tomcat-9.0 server on Community Server Connection.
 
-## Screenshots of Application
+## Video Walk Through
+
+[![walk through](./screenshots/indexLoggedIn.png)](<https://youtu.be/t83B3XQPR54> "video walk through")
 
 ### index page
 <img style="flex: 1;" src="./screenshots/indexPagee.png" width="75%" height="75%">
